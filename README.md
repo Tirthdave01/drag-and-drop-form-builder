@@ -1,5 +1,10 @@
 # ⚡ Drag-and-Drop Form Builder (FormCraft)
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-onrender.com-brightgreen?style=for-the-badge&logo=render)](https://drag-and-drop-form-builder.onrender.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/Tirthdave01/drag-and-drop-form-builder)
+
+> 🌐 **Live Production App:** [https://drag-and-drop-form-builder.onrender.com](https://drag-and-drop-form-builder.onrender.com)
+
 A full-stack dynamic form creation and response analytics platform inspired by Google Forms & Typeform. Form creators assemble forms via drag-and-drop, publish a public link, and inspect submissions in real-time with visual analytics and CSV export.
 
 ---
