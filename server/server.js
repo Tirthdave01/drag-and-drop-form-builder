@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
+const path = require('path');
+const fs = require('fs');
 const db = require('./db');
 const { generateToken, authMiddleware } = require('./auth');
 const { validateAnswers } = require('./validator');
@@ -580,6 +582,16 @@ app.get('/api/forms/:id/live', (req, res) => {
     }
   });
 });
+
+// Serve production static frontend if built
+const clientDist = path.join(__dirname, '../client/dist');
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
 
 // Initialize database and start server
 async function startServer() {
